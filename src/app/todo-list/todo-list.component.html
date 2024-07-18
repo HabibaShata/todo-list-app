@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <h1 class="text-center text-bg-light rounded-5 text-black-50">To-Do List</h1>
+    <app-todo-input  (addTodo)="addTodo($event)" ></app-todo-input>
+    <button mat-raised-button color="warn" (click)="clearTodos()">Clear All</button>
+    <ul class="list-group mt-3">
+      <li class="list-group-item" *ngFor="let todo of todos; let i = index">
+        <app-todo-item [todo]="todo" (remove)="removeTodo(i)"></app-todo-item>
+      </li>
+    </ul>
+  </div>
+  
